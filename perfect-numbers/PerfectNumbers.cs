@@ -21,7 +21,7 @@ public static class PerfectNumbers
         return Classification.Perfect;
     }
 
-    public static IList<int> GetDivisors(int number)
+    public static IEnumerable<int> GetDivisors(int number)
     {
         var divisors = new List<int>();
         for (int i = 1; i < number; i++)
