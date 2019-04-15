@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Xunit;
 using System.Diagnostics;
+using Xunit;
 
 public class RobotNameTest
 {
