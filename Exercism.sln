@@ -45,6 +45,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobotName", "robot-name\Rob
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Allergies", "allergies\Allergies.csproj", "{F8CAF687-E2BF-48CC-9EF1-AAF48C653D5A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradeSchool", "grade-school\GradeSchool.csproj", "{471AD6D1-9068-4997-B64C-7B0EB4CF8958}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SumOfMultiples", "sum-of-multiples\SumOfMultiples.csproj", "{F842EA84-7BC2-45C8-9ABB-2D3284B37646}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +139,14 @@ Global
 		{F8CAF687-E2BF-48CC-9EF1-AAF48C653D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8CAF687-E2BF-48CC-9EF1-AAF48C653D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8CAF687-E2BF-48CC-9EF1-AAF48C653D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{471AD6D1-9068-4997-B64C-7B0EB4CF8958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{471AD6D1-9068-4997-B64C-7B0EB4CF8958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{471AD6D1-9068-4997-B64C-7B0EB4CF8958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{471AD6D1-9068-4997-B64C-7B0EB4CF8958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F842EA84-7BC2-45C8-9ABB-2D3284B37646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F842EA84-7BC2-45C8-9ABB-2D3284B37646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F842EA84-7BC2-45C8-9ABB-2D3284B37646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F842EA84-7BC2-45C8-9ABB-2D3284B37646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
