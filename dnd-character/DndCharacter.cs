@@ -8,6 +8,7 @@ public class DndCharacter
     public int Intelligence { get; private set; }
     public int Wisdom { get; private set; }
     public int Charisma { get; private set; }
+
     public int Hitpoints
     {
         get
@@ -31,7 +32,6 @@ public class DndCharacter
     {
         return new DndCharacter
         {
-
             Strength = Ability(),
             Dexterity = Ability(),
             Constitution = Ability(),

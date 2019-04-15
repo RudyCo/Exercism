@@ -1,6 +1,5 @@
 // This file was auto-generated based on version 1.1.0 of the canonical data.
 
-using System.Linq;
 using Xunit;
 
 public class DndCharacterTest

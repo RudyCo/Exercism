@@ -110,10 +110,10 @@ public class PovTest
     {
         var from = "x";
         var to = "sibling-1";
-        var tree = new Tree("grandparent", 
-                        new Tree("parent", 
-                            new Tree("x"), 
-                            new Tree("sibling-0"), 
+        var tree = new Tree("grandparent",
+                        new Tree("parent",
+                            new Tree("x"),
+                            new Tree("sibling-0"),
                             new Tree("sibling-1")
                         )
                     );

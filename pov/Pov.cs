@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
 
 public class Tree
 {
@@ -22,6 +21,7 @@ public static class Pov
     {
         throw new NotImplementedException("You need to implement this function.");
     }
+
     public static IEnumerable<string> PathTo(string from, string to, Tree tree)
     {
         var fromPath = Path(from, tree);
@@ -38,35 +38,30 @@ public static class Pov
         var path = new List<string>();
         i--;
 
-        path = fromPath.Skip(i).Reverse().Concat(toPath.Skip(i+1)).ToList();
+        path = fromPath.Skip(i).Reverse().Concat(toPath.Skip(i + 1)).ToList();
 
         Debug.WriteLine("From:{0}", string.Join("-", fromPath));
         Debug.WriteLine("To  :{0}", string.Join("-", toPath));
         Debug.WriteLine("Path:{0}", string.Join("-", path));
 
-
         return path;
     }
 
-
     public static IEnumerable<string> Path(string node, Tree tree)
     {
-
-       
-
         bool found = false;
         foreach (var child in tree.Children)
         {
             foreach (var subnode in Path(node, child))
             {
-               // yield return tree.Value;
+                // yield return tree.Value;
                 yield return subnode;
                 found = true;
-            }                
+            }
         }
         if (node == tree.Value)
             yield return tree.Value;
-        if (found)  yield return tree.Value;
+        if (found) yield return tree.Value;
     }
 
     //public static IEnumerable<string> PathTo(string from, string to, Tree tree)
@@ -119,6 +114,4 @@ public static class Pov
     //        yield return tree.Value;
     //    }
     //}
-
-
 }
