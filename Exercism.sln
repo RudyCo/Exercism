@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acronym", "acronym\Acronym.csproj", "{03992216-435D-490B-9CA0-CDE40F5E48A0}"
 EndProject
@@ -96,6 +96,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProteinTranslation", "protein-translation\ProteinTranslation.csproj", "{E455F2BA-789B-40CD-95FB-01E372F574CB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrabbleScore", "scrabble-score\ScrabbleScore.csproj", "{206483F4-7B17-4656-BC03-5AE929A17EA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaddlePoints", "saddle-points\SaddlePoints.csproj", "{D31FCFFD-D95B-409E-AB13-56D0DD955C8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,6 +281,10 @@ Global
 		{206483F4-7B17-4656-BC03-5AE929A17EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{206483F4-7B17-4656-BC03-5AE929A17EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{206483F4-7B17-4656-BC03-5AE929A17EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31FCFFD-D95B-409E-AB13-56D0DD955C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31FCFFD-D95B-409E-AB13-56D0DD955C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31FCFFD-D95B-409E-AB13-56D0DD955C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31FCFFD-D95B-409E-AB13-56D0DD955C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
