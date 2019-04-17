@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 public class Tree
 {
-    public string Value { get; private set; }
-    public Tree[] Children { get; private set; }
+    internal readonly string value;
+    internal Tree parent;
+    internal readonly Tree[] children;
 
     public Tree(string value, params Tree[] children)
     {
-        this.Value = value;
-        this.Children = children;
+        this.value = value;
+        this.children = children;
+
+        foreach (var child in children)
+        {
+            child.parent = this;
+        }
     }
 }
 
@@ -24,94 +29,38 @@ public static class Pov
 
     public static IEnumerable<string> PathTo(string from, string to, Tree tree)
     {
-        var fromPath = Path(from, tree);
-        if (fromPath == null) throw new ArgumentException("Source does not exist!");
+        var pathFrom = PathTo(from, tree).ToList();
+        if (pathFrom.Count < 1) throw new ArgumentException();
+        var pathTo = PathTo(to, tree).ToList();
+        if (pathTo.Count < 1) throw new ArgumentException();
 
-        var toPath = Path(to, tree);
-        if (toPath == null) throw new ArgumentException("Source does not exist!");
-
-        int min = Math.Min(fromPath.Count(), toPath.Count());
-
-        int i = 0;
-
-        while (i < min && fromPath.ToList()[i] == toPath.ToList()[i]) { i++; }
-        var path = new List<string>();
-        i--;
-
-        path = fromPath.Skip(i).Reverse().Concat(toPath.Skip(i + 1)).ToList();
-
-        Debug.WriteLine("From:{0}", string.Join("-", fromPath));
-        Debug.WriteLine("To  :{0}", string.Join("-", toPath));
-        Debug.WriteLine("Path:{0}", string.Join("-", path));
-
-        return path;
+        string common = pathTo[0];
+        while (pathFrom.Count > 0 && pathTo.Count > 0 && pathFrom[0] == pathTo[0])
+        {
+            common = pathTo[0];
+            pathFrom.Remove(pathFrom[0]);
+            pathTo.Remove(pathTo[0]);
+        }
+        pathFrom.Reverse();
+        return pathFrom.Concat(new[] { common }).Concat(pathTo);
     }
 
-    public static IEnumerable<string> Path(string node, Tree tree)
+    public static IEnumerable<string> PathTo(string node, Tree tree)
     {
-        bool found = false;
-        foreach (var child in tree.Children)
+        if (tree.value == node) yield return node;
+
+        foreach (var child in tree.children)
         {
-            foreach (var subnode in Path(node, child))
+            var path = PathTo(node, child);
+            if (path.Any())
             {
-                // yield return tree.Value;
-                yield return subnode;
-                found = true;
+                yield return tree.value;
+                foreach (var p in path)
+                {
+                    yield return p;
+                }
+                yield break;
             }
         }
-        if (node == tree.Value)
-            yield return tree.Value;
-        if (found) yield return tree.Value;
     }
-
-    //public static IEnumerable<string> PathTo(string from, string to, Tree tree)
-    //{
-    //    if (tree.Value == from)
-    //    {
-    //        yield return tree.Value;
-    //    }
-
-    //    foreach (var child in tree.Children)
-    //    {
-    //        var fromList = PathTo(from, tree.Value, child).ToList();
-    //        var toList = PathTo(tree.Value, to, child).ToList();
-
-    //        foreach (var x in fromList)
-    //        {
-    //            yield return x;
-    //        }
-
-    //        if (fromList.Any() || toList.Any())
-    //        {
-    //            if (fromList.Any() && toList.Any())
-    //            {
-    //                if (fromList.Last() != toList.First())
-    //                {
-    //                    yield return tree.Value;
-    //                }
-    //            }
-    //            else
-    //            {
-    //                if (fromList.Any())
-    //                {
-    //                    yield return tree.Value;
-    //                }
-    //                else if (toList.Any())
-    //                {
-    //                    yield return tree.Value;
-    //                }
-    //            }
-    //        }
-
-    //        foreach (var x in toList)
-    //        {
-    //            yield return x;
-    //        }
-    //    }
-
-    //    if (tree.Value == to)
-    //    {
-    //        yield return tree.Value;
-    //    }
-    //}
 }
