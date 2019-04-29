@@ -101,6 +101,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaddlePoints", "saddle-poin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wordy", "wordy\Wordy.csproj", "{BFDCC2C3-C442-4853-958D-D9D1D5663108}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotationalCipher", "rotational-cipher\RotationalCipher.csproj", "{93800118-1973-41A4-8847-5F854640C1C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +293,10 @@ Global
 		{BFDCC2C3-C442-4853-958D-D9D1D5663108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFDCC2C3-C442-4853-958D-D9D1D5663108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFDCC2C3-C442-4853-958D-D9D1D5663108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93800118-1973-41A4-8847-5F854640C1C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93800118-1973-41A4-8847-5F854640C1C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93800118-1973-41A4-8847-5F854640C1C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93800118-1973-41A4-8847-5F854640C1C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -342,6 +348,7 @@ Global
 		{206483F4-7B17-4656-BC03-5AE929A17EA2} = {22C4C2DA-E540-4325-810F-8E5220182E87}
 		{D31FCFFD-D95B-409E-AB13-56D0DD955C8D} = {5DB3A579-754F-4571-AB2F-4D333AD13A64}
 		{BFDCC2C3-C442-4853-958D-D9D1D5663108} = {5DB3A579-754F-4571-AB2F-4D333AD13A64}
+		{93800118-1973-41A4-8847-5F854640C1C5} = {5DB3A579-754F-4571-AB2F-4D333AD13A64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {276E8589-3CB6-4886-9BAF-83820BD5061F}
