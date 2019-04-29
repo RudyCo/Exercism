@@ -1,45 +1,39 @@
-using System.Collections.Generic;
+using System;
 
 public static class Wordy
 {
-    private enum Operation
-    {
-        Addition,
-        Subtraction,
-        Multiplication,
-        Division,
-        None
-    };
-
-    private static readonly IDictionary<string, Operation> operations = new Dictionary<string, Operation>
-    {
-        {"plus", Operation.Addition},
-        {"minus", Operation.Subtraction},
-        {"multiplied", Operation.Multiplication},
-        {"divided", Operation.Division}
-    };
-
     public static int Answer(string question)
     {
-        // TODO Use Sprache
+        if (!question.StartsWith("What is ")) throw new ArgumentException();
+        if (!question.EndsWith("?")) throw new ArgumentException();
 
-        var operation = Operation.Addition;
-        var words = question.Split(' ');
-        int res = 0;
-        foreach (var word in words)
+        question = question.Replace("What is ", "").Replace("?", "");
+        question = question.Replace("multiplied by", "multiplied_by");
+        question = question.Replace("divided by", "divided_by");
+
+        var words = question.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+        if (words.Length % 2 != 1) throw new ArgumentException();
+
+        int value = Parse(words[0]);
+        for (int pos = 1; pos <= words.Length - 2; pos += 2)
         {
-            if (int.TryParse(word, out int cur))
+            var op = words[pos];
+            switch (op)
             {
-                switch (operation)
-                {
-                    case Operation.Addition: res += cur; break;
-                    case Operation.Subtraction: res -= cur; break;
-                    case Operation.Multiplication: res *= cur; break;
-                    case Operation.Division: res /= cur; break;
-                    case Operation.None: break;
-                }
+                case "plus": value += Parse(words[pos + 1]); break;
+                case "minus": value -= Parse(words[pos + 1]); break;
+                case "multiplied_by": value *= Parse(words[pos + 1]); break;
+                case "divided_by": value /= Parse(words[pos + 1]); break;
+                default: throw new ArgumentException();
             }
         }
-        return res;
+
+        return value;
+    }
+
+    private static int Parse(string txt)
+    {
+        if (!int.TryParse(txt, out int value)) throw new ArgumentException();
+        return value;
     }
 }
